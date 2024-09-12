@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pra Gica</title>
+    <link rel="stylesheet" href="styles.css"> <!-- Link para o arquivo CSS -->
+</head>
+<body>
+    <h1>mensagem para giovanna</h1>
+    
+    <div class="buttons" id="buttonsDiv">
+        <button id="sim" onclick="mostrarGif()">Ver</button>
+        <button id="nao" onclick="moverBotao()">Não quero ver</button>
+    </div>
+
+    <div id="gif">
+        <div id="message">fica bem gigica &#10084;</div>
+        <img src="image.png" alt="Cachorrin">
+    </div>
+
+    <script>
+        const naoButton = document.getElementById('nao');
+        const buttonsDiv = document.getElementById('buttonsDiv');
+
+        function moverBotao() {
+            const x = Math.random() * (window.innerWidth - naoButton.offsetWidth);
+            const y = Math.random() * (window.innerHeight - naoButton.offsetHeight);
+            naoButton.style.position = 'absolute';
+            naoButton.style.left = `${x}px`;
+            naoButton.style.top = `${y}px`;
+        }
+
+        function mostrarGif() {
+            // Exibe o GIF
+            document.getElementById('gif').style.display = 'block';
+
+            // Esconde os botões
+            buttonsDiv.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
